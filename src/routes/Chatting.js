@@ -87,7 +87,7 @@ function Chatting({userObj}) {
       
        /> 
     <main className='chatting_main'>
-      <span className='date_info'>Thursday,March 23, 2023</span>
+      <span className='date_info'>Thursday,March 2333, 2023</span>
      
       <div className='chat_box my'>
       {kakaos.map(kakao => (
