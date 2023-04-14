@@ -147,7 +147,7 @@ function Profiles({userObj}) {
 
   return (
     <>
-      <Header a={<i><FaTimes/></i>} i={<FaUserAlt/>} /> 
+       
       <main className='profile_main'>
       <section className='background'>
         <img src={newBg} alt='' />

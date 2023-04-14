@@ -1,38 +1,121 @@
 @import url(Common.scss);
   .auth{
-    height: 100vh;
+    background: url(../images/backgroundPage.png)no-repeat 0 0;
+    position: relative;
+    height: 100vh; 
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: url(../images/bg_newsletter.jpg)no-repeat 50% 30%;
     width: 100%;
     margin: 0 auto;
-      section{
-      // background: url(../images/09cd3751f9e59f3bc82b982059e7b1c8.jpg)no-repeat 0 0;
-      // display: block;
-      // width: 100%;
+    background-size: cover;
+      .auth_background{
+        background: url(../images/Bubble.png)no-repeat 0 0;
+        object-fit: cover;
+        width: 360px;
+        height: 360px;
+        display: block;
+        border: 1px solid #eeeeee;
+        border-radius: 10px;
+        box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+         rgba(0, 0, 0, 0.12) 0px -12px 30px,
+          rgba(0, 0, 0, 0.12) 0px 4px 6px,
+           rgba(0, 0, 0, 0.17) 0px 12px 13px,
+            rgba(0, 0, 0, 0.09) 0px -3px 5px;  
+        h3{
+          font-size: 30px;
+          font-weight: bold;
+          text-shadow: 2px 6px 2px gray;
+          color: #eeeeee;
+          position: absolute;
+          top: 160px;left: 50%;
+          animation: slidein 3s infinite;
+        }
+        @keyframes slidein {
+          from {
+            transform: translateX(-130%);
+          }
+          to {
+            transform: translateX(20%);
+          }
+        } 
       }
     form {
+      position: absolute;
       display: block;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
+      margin-bottom: 20px;
         input {
-            margin: 10px 0; 
+            margin: 10px 0;
+            border-radius: 10px;
+            height: 30px;
+            border: none;
+            text-align: center;
+             
+        }
+        .auth_input_account{
+          margin-top: 100px;
+          background-color: transparent;
+          color: #bbb;
+          font-weight: bold;
+          font-size: 15px;
+          cursor: pointer;
         }
     }
     span{
-      font-size: 14px;
+      padding: 1px 6px;
+      margin-top: 20px;
+      font-size: 13px;
       font-weight: bold;
       margin-bottom: 10px;
+      border-radius: 5px;
+      width: 150px;
+      height: 20px;     
+      text-align: center;
+      background-color: #fff;
+      cursor: pointer;
+      &:hover{
+        background-color: #ccc;
+      }
+    }
+
+    p{
+      font-size: 15px;
+      font-weight: bold;
+      margin-bottom: 10px;
+
     }
     div {
       display: flex;
       flex-direction: row;
       justify-content: center;
       align-items: center;
+      button{
+        text-indent: -9999px;
+        overflow: hidden;
+        border-radius: 10px;
+        border: none;
+        cursor: pointer;
+      }
+      .auth_google{
+      background: url(../images/Group.png)no-repeat 0 0;
+      width: 30px;
+      height: 30px;
+      background-size: cover;
+      margin-right: 20px;  
+      }
+      .auth_github{
+        background: url(../images/githubico.png) no-repeat 0 0;
+        display: block;
+        width: 30px;
+        height: 30px;
+        background-size: cover;
+        margin-left: 20px;
+      }
   
     }
 }

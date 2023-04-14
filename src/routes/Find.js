@@ -11,10 +11,10 @@ function Find() {
      h1="Find" a="Edit" />  
     <main className='find_main'>
       <ul className='find_method'>
-        <li><a href='#'><i><FaAddressBook/></i>Find</a></li>
-        <li><a href='#'><i><FaQrcode/></i>QR Code</a></li>
-        <li><a href='#'><i><FaMobileAlt/></i>Shake</a></li>
-        <li><a href='#'><i><FaEnvelope/></i>Invite via SMS</a></li>  
+        <li><i><FaAddressBook/></i>Find</li>
+        <li><i><FaQrcode/></i>QR Code</li>
+        <li><i><FaMobileAlt/></i>Shake</li>
+        <li><i><FaEnvelope/></i>Invite via SMS</li>  
       </ul>
       <section className='recommend_section'>
         <header><h2>Recommended Friends</h2></header>

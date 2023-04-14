@@ -1,14 +1,14 @@
-import { FaPlane,FaWifi,FaMoon,FaBluetoothB,FaBatteryFull,FaSearch,FaRegComment  } from "react-icons/fa";
+import { FaSearch,FaComment  } from "react-icons/fa";
 import Chat from '../components/Chat';
 import Header from '../components/Header';
 import Tab from '../components/Tab';
 import '../styles/Chats.scss';
 import packs from '../data/packs.json'
-import { useState } from "react";
+
 import { Link } from 'react-router-dom';
 
 
-function Chats(props) {
+function Chats() {
 
   
 
@@ -40,9 +40,9 @@ function Chats(props) {
 ))}
           </section>
           <div className='chat_fa_btn'>
-            <a href='#'>
-            <i><FaRegComment/></i>  
-            </a>
+
+            <i><FaComment/></i>  
+          
             </div>  
     </main>
     <Tab/>   

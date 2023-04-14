@@ -1,5 +1,5 @@
 import React from 'react'
-import { FaPlane,FaWifi,FaMoon,FaBluetoothB,FaBatteryFull,FaSmile,FaPaintBrush,FaHandPeace,FaUserCircle,FaInfoCircle,FaUtensils,FaStore,FaTv,FaPencilAlt,FaGraduationCap,FaBuilding,FaWonSign,FaVideo,FaRegComment,FaDiaspora  } from "react-icons/fa";
+import { FaSmile,FaPaintBrush,FaHandPeace,FaUserCircle,FaInfoCircle,FaUtensils,FaStore,FaTv,FaPencilAlt,FaGraduationCap,FaBuilding,FaWonSign,FaVideo,FaComment,FaDiaspora  } from "react-icons/fa";
 import Header from '../components/Header';
 import Tab from '../components/Tab';
 import '../styles/More.scss';
@@ -18,15 +18,15 @@ function More({userObj}) {
           <span className='profile_name'>{userObj.displayName}</span>
           <span className='profile_email'>Userid@gmail.com</span>
         </span>
-        <span className='chat_img'><a href='#'><i><FaRegComment/></i></a></span>
+        <span className='chat_img'><a href='#'><i><FaComment/></i></a></span>
       </section>
       <section className='user_menu'>
         <h2 className='blind'>사용자 메뉴</h2>
         <ul>
-          <li><a href='#'><i><FaSmile/></i>Emoticons</a></li>
-          <li><a href='#'><i><FaPaintBrush/></i>Themes</a></li>
-          <li><a href='#'><i><FaHandPeace/></i>Plus Friend</a></li>
-          <li><a href='#'><i><FaUserCircle/></i>Account</a></li>
+          <li><i><FaSmile/></i>Emoticons</li>
+          <li><i><FaPaintBrush/></i>Themes</li>
+          <li><i><FaHandPeace/></i>Plus Friend</li>
+          <li><i><FaUserCircle/></i>Account</li>
         </ul>
       </section>
       <section className='plus_friends'>
@@ -35,22 +35,22 @@ function More({userObj}) {
           <span><i><FaInfoCircle/></i>Learn More</span>
         </header>
         <ul className='plus_list'>
-          <li><a href='#'><i><FaUtensils/></i>Order</a></li>
-          <li><a href='#'><i><FaStore/></i>Store</a></li>
-          <li><a href='#'><i><FaTv/></i>TV Channel/Radio</a></li>
-          <li><a href='#'><i><FaPencilAlt/></i>Creation</a></li>
-          <li><a href='#'><i><FaGraduationCap/></i>Education</a></li>
-          <li><a href='#'><i><FaBuilding/></i>Politics/Society</a></li>
-          <li><a href='#'><i><FaWonSign/></i>Finance</a></li>
-          <li><a href='#'><i><FaVideo/></i>Movies/Music</a></li>
+          <li><i><FaUtensils/></i>Order</li>
+          <li><i><FaStore/></i>Store</li>
+          <li><i><FaTv/></i>TV Channel/Radio</li>
+          <li><i><FaPencilAlt/></i>Creation</li>
+          <li><i><FaGraduationCap/></i>Education</li>
+          <li><i><FaBuilding/></i>Politics/Society</li>
+          <li><i><FaWonSign/></i>Finance</li>
+          <li><i><FaVideo/></i>Movies/Music</li>
         </ul>
       </section>
       <section className='more_app'>
         <h2 className='blind'>앱 더보기</h2>
         <ul>
-          <li><a href='#'><span className='app_icon'></span>KaKao Story</a></li>
-          <li><a href='#'><span className='app_icon'></span>Path</a></li>
-          <li><a href='#'><span className='app_icon'></span>KaKao Friends</a></li>
+          <li><span className='app_icon'></span>KaKao Story</li>
+          <li><span className='app_icon'></span>Path</li>
+          <li><span className='app_icon'></span>KaKao Friends</li>
         </ul>
       </section>
     </main>

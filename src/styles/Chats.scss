@@ -3,7 +3,8 @@
 .chats_main{
   height: 85.8%;
   padding-top: 30px;
-  
+  background: url(../images/backgroundPage.png)no-repeat 0 0;
+  background-size: cover;
 
   .search_box{
     display: flex;
@@ -11,6 +12,7 @@
     justify-content: center;
     align-items: center;
     height: 7.3%;min-height: 53px;
+    margin-top: 30px;
   
   .search_inner{
     display: flex;
@@ -19,7 +21,8 @@
     width: 88%;
     height: 50%;
     background-color: #f1f2f4;
-    border-radius: 5px; 
+    border-radius: 10px;
+    padding: 4px 0; 
     
     & > i{
       font-size: 16px;
@@ -31,7 +34,12 @@
       flex: 1;
       background: transparent;
       border: none;
-      padding: 0 15px;  
+      padding: 0 15px; 
+      &::placeholder{
+        opacity: 0.5;
+        font-weight: bold;
+        font-style: italic;
+      }   
     }
     & > input::placeholder{
       text-align: center;
@@ -93,28 +101,29 @@
   .chat_fa_btn {
     position: fixed;
     right: 20px;
-    bottom: 80px;  
-  
-    a {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      width: 60px;
-      height: 60px;
-      background-color: #ffe84c;
-      border-radius: 50%;
-      box-shadow: 0 2px 6px #0004;
-      font-size: 18px;
-      color: #513736;
-      transition:  color 300ms linear 0s, background 300ms linear 0s; 
+    bottom: 80px;      
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: 60px;
+    background-color: #ffe84c;
+    border-radius: 50%;
+    box-shadow: 0 2px 6px #0004;
+    font-size: 18px;
+    color: #513736;
+    transition:  color 300ms linear 0s, background 300ms linear 0s; 
 
-    }
-    & > a:hover {
+    &:hover {
       background: #513736;
       color: #ffe84c  
     }
   }
 
+}
+
+.active i {
+  color: black !important;
 }
 
 

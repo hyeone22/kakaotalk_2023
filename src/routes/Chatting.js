@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { FaListUl,FaAngleLeft,FaSmile,FaPhone,FaRegArrowAltCircleLeft,FaPlusCircle } from "react-icons/fa";
+import { FaBars,FaArrowLeft,FaSmile,FaPhone,FaRegArrowAltCircleLeft,FaPlusCircle,FaPhoneAlt } from "react-icons/fa";
 import Header from '../components/Header';
 import '../styles/Chatting.scss';
 import { addDoc, collection, onSnapshot, orderBy, query } from 'firebase/firestore';
@@ -21,7 +21,7 @@ function Chatting({userObj}) {
   useEffect(() => {
    
     const q = query(collection(db, "kakaos"),
-                    orderBy("createdAt","desc"));
+                    orderBy("createdAt","asc"));
     const unsubscribe = onSnapshot(q, (querySnapshot) => {
       const newArray = [];
       querySnapshot.forEach((doc) => {
@@ -81,19 +81,27 @@ function Chatting({userObj}) {
     }
 
   return (
+  
     <div>
-     <Header 
-      h1="Friend Name" a={<i><FaAngleLeft/></i>} i={<i><FaListUl/></i>}
+
+      <div className='chatting_profile'>
+      <span className='profile_img empty'><img src={image} alt/></span>
+      <span className='green_light'></span>
+      <span className='chat_profile_name'>{name}</span>
+       <div className='icon_set'>
+        <i><FaArrowLeft/></i>
+        <i><FaPhoneAlt/></i>
+        <i><FaBars/></i>
+        </div>
+ 
+
       
-       /> 
+      </div>
+
     <main className='chatting_main'>
-      <span className='date_info'>Thursday,March 2333, 2023</span>
+      <span className='date_info'>Thursday,March 23, 2023</span>
      
-      <div className='chat_box my'>
-      {kakaos.map(kakao => (
-          <Kakao key={kakao.id} kakaoObj={kakao} isOwner={kakao.createrId === userObj.uid}/> 
-        ))}
-  </div>
+  
   <div className='chat_box other'>
     <div className='other_info'>
 
@@ -102,7 +110,12 @@ function Chatting({userObj}) {
     </div>
       <span className='chat'>{id}</span>
       <span className='chat_time'><span>12</span>:<span>08</span></span>
-  </div>     
+  </div> 
+  <div className='chat_box my'>
+      {kakaos.map(kakao => (
+          <Kakao key={kakao.id} kakaoObj={kakao} isOwner={kakao.createrId === userObj.uid}/> 
+        ))}
+  </div>    
     </main>
     <footer className='chatting_footer'>
     <form action="/" method="post" onSubmit={onSubmit} className='chatting_form'>

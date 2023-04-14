@@ -5,7 +5,7 @@ import '../styles/Header.scss';
 function Header(props) {
   return (
     <div>
-     <header className='header1'  style={{backgroundColor:""}}>
+     <header className='header1'  style={{backgroundColor:"transparent"}}>
       <div className='status_bar'>
           <div className='left_item'>
           <i><FaPlane/></i>
@@ -23,7 +23,7 @@ function Header(props) {
       </div>
       <div className='title_bar'>
         <h1>{props.h1} <span>{props.span}</span></h1>
-        <div className='left_item'><a href='#'>{props.a}</a></div>
+        <div className='left_item'>{props.a}</div>
         <div className='right_item'>{props.i}</div>
         
       </div>  

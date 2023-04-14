@@ -1,30 +1,81 @@
 
+.chatting_profile{
+  position: relative;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 64px;
+  border-bottom: 2px solid #ccc;
+  .profile_img {
+      width: 50px;
+      height: 50px;
+      position: absolute;
+      top: -5px;
+    img{
+
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+    }
+ 
+  }
+  .green_light{
+    width: 16px;
+    height: 16px;
+    background-color: green;
+    position: absolute;
+    left: 55px;top: 40px;
+    border-radius: 50%;
+  }
+  .chat_profile_name{
+    position: absolute;
+    left: 90px;top: 20px;
+    font-size: 15px;
+    font-weight: bold;
+
+  }
+  .icon_set{
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+    
+    i{
+      font-size: 20px;
+      align-items: center;
+      align-self: center;
+      padding: 18px;
+      color: #04aaff;
+    }
+
+  } 
+}
 
 
 .chatting_main {
   display: flex;flex-direction: column;
   height: calc(100vh - 109px);
   padding-top: 60px;
-  
-  background: #a1c0d5;
+  background: url(../images/backgroundPage.png)no-repeat 0 0;
+  background-size: cover;
   
   .date_info{
     opacity: 0.5;
     text-align: center;
-    margin: 10px; 
+    margin: 20px; 
   }
   .chat_box{
     display: inline-flex;
     flex-direction: column;
     align-items: flex-start;
     width: fit-content;
-    max-width: calc(100%-80px);
+    max-width: calc(100%-30px);
     position: relative;
   }
   .my{
     align-self: flex-end;
     align-items: flex-end;
-    max-width: 240px;
+    
     margin-right: 10px;
 
     .chat_time{
@@ -85,10 +136,10 @@
   left: 0;bottom: 0;
   width: 100%;
   height: 55px;
-  background: #eee;
+  background: url(../images/backgroundPage.png)no-repeat 0 0;
 
   .chatting_form {
-    width: calc(100% - 40px);
+    width: calc(100% - 00px);
     display: flex;
     justify-content: flex-end;
     .text_box{

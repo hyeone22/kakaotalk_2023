@@ -5,8 +5,13 @@ import { Link } from 'react-router-dom'
 import Header from '../components/Header';
 import Tab from '../components/Tab';
 import axios from 'axios';
-
-import packs from '../data/packs.json'
+import packs from '../data/packs.json';
+import { Navigation, Pagination, Scrollbar, A11y } from 'swiper';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import 'swiper/css/scrollbar';
 
 
 function Index({userObj}) {
@@ -48,9 +53,52 @@ function Index({userObj}) {
           <span className='profile_name'>{userObj.displayName}</span>
           <span className='profile_messages'>안녕</span>
         </Link>
-      </li> 
+      </li>
 
       </ul>  
+      <header><h2>Update Friends</h2></header>
+      <Swiper
+       modules={[Navigation, Pagination, Scrollbar, A11y]}
+       
+       loop={true}
+       breakpoints={{
+        1378:{
+          slidesPerView: 6, // 한번에 보이는 슬라이드 개수
+          slidesPerGroup: 6, // 몇개씩 슬라이드 할지 
+        },
+        998:{
+          slidesPerView: 5,
+          slidesPerGroup: 5,
+        },
+        480:{
+          slidesPerView: 5,
+          slidesPerGroup: 5,
+        },
+        0: {
+          slidesPerView: 4,
+          slidesPerGroup: 4,
+        }
+      }} 
+      >
+      <ul className='update_ul'>
+     
+      {data.map((item,index) => (
+          <SwiperSlide>
+         <li className='update_friend'
+            key={item.id}
+            email={item.email}
+            image={packs[index].images}
+           > 
+         <Link to='/profile' state={{user: item, image: packs[index].images}}>
+           <span className='profile_img empty'><img src={packs[index].images} alt='Profile' className='swiper_img'/></span>
+           <span className='update_profile_name'>{item.username}</span>
+         </Link>
+       </li> 
+       </SwiperSlide>
+      ))}
+      
+      </ul>
+      </Swiper>
     </section>
     <section className='main_section'>
       <header><h2>Friends</h2></header>
@@ -61,7 +109,7 @@ function Index({userObj}) {
             image={packs[index].images}
               >
           <Link to='/profile' state={{user: item, image: packs[index].images}}>
-            <span className='profile_img empty'><img src={packs[index].images} alt='Profile'/></span>
+            <span className='profile_img empty'><img src={packs[index].images} alt='Profile' /></span>
             <span className='profile_name'>{item.username}</span>
             <span className='profile_messages'>{item.name}</span>
           </Link>

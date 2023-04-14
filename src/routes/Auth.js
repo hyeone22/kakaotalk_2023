@@ -59,22 +59,25 @@ function Auth() {
 
   return (
     <div className='auth'>
-      <section className='background'>
+      <section className='auth_background'>
       <h2 className='blind'>Chatting Api</h2>
+      <h3>Chatting App</h3>
       </section>
       <form onSubmit={onSubmit}>
         <input name='email' type='email' placeholder='Email' required 
         value={email} onChange={onChange} />
         <input name='password' type='password' placeholder='Password' required 
         value={password} onChange={onChange} />
-        <input type='submit' value={newAccount ? "Create Account" : "Log In"} />
+        <input type='submit' value={newAccount ? "Create Account" : "Log In"}
+          className='auth_input_account' />
       </form>
       <span onClick={toggleAccount}>
         {newAccount ? "Sign In" : "Create Account"}
       </span>
+      <p>Or Login with</p>
       <div>
-        <button onClick={onSocialClick} name="google" >Continue with Google</button>
-        <button onClick={onSocialClick} name="github" >Continue with Github</button>
+        <button onClick={onSocialClick} name="google" className='auth_google' >Continue with Google</button>
+        <button onClick={onSocialClick} name="github" className='auth_github' >Continue with Github</button>
       </div>
     </div>
   )

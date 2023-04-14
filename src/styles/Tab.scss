@@ -17,15 +17,20 @@
             text-align: center;
             transition: transform 500ms linear 0s;
             border: 1px solid red;
-              a {
-                color: #c0c1c2;
+              
+               
                   i {
                     display: block;
-                    font-size: 22px;    
+                    font-size: 22px; 
+                    color: #c0c1c2;
+                    &:hover{
+                      color: gray;
+                    }   
                   }  
-              }
+              
               &:hover {
                 transform: scale(1.1);
+                color: #000;
               }  
           }
       }

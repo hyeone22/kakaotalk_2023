@@ -1,173 +1,84 @@
 
- .header1{position: fixed;
-    left: 0;top: 0;
-    width: 100%;height: 64px;
+.header1{position: fixed;
+  left: 0;top: 0;
+  width: 100%;height: 64px;
+  display: flex;
+  flex-direction: column;
+  background: #513736;
+  color: #fff;padding: 0 15px;
+  box-sizing: border-box;
+
+  .status_bar{
     display: flex;
-    flex-direction: column;
-    background: #513736;
-    color: #fff;padding: 0 15px;
-    box-sizing: border-box;
-
-    .status_bar{
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-      align-items: center;
-      height: 37.5%;
-    & > div {
-      flex: 1;
-      border: 1px solid red;
-      
-
-     * {
-      padding: 3px;
-    }    
-
-    }
-
-    & > .left_item {
-      text-align: left;
-    }
-    & > .center_item {
-      text-align: center;
-    }
-    & > .right_item {
-      text-align: right;
-    }
-      }
-
-    .title_bar{
-      display: flex;flex-direction: row;
-      justify-content: space-between;
-      align-items: center;
-      height: 62.5%;
-      
-    & > * {
-      flex: 1;
-      font-size: 16px;
-      border: 1px solid red;  
-    }
-
-    & > h1 {
-      order: 2;
-      text-align: center;
-      
-       span {
-        color: #f8ea65;  
-      }  
-    }
-
-    & > .left_item {
-      order: 1;
-      text-align: left;
-      
-      a{
-        color: #fff;
-        opacity: 0.5  
-      }
-    }
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 37.5%;
+  & > div {
+    flex: 1;
+    ;
     
-    & > .right_item {
-      order: 3;
-      text-align: right;
-      font-size: 20px; 
-      
-      a {
-        color: #fff;
-      }  
+
+   * {
+    padding: 3px;
+  }    
+
+  }
+
+  & > .left_item {
+    text-align: left;
+  }
+  & > .center_item {
+    text-align: center;
+  }
+  & > .right_item {
+    text-align: right;
+  }
     }
+
+  .title_bar{
+    display: flex;flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 62.5%;
+    
+  & > * {
+    flex: 1;
+    font-size: 16px;
+     
+  }
+
+  & > h1 {
+    order: 2;
+    text-align: center;
+    
+     span {
+      color: #f8ea65;  
     }  
   }
 
-
-// #root > div > header {
-//   position: fixed;
-//   left: 0;
-//   top: 0;
-//   width: 100%;
-//   height: 64px;
-//   display: flex;
-//   flex-direction: column;
-//   background: #513736;
-//   color: #fff;
-//   padding: 0 15px;
-//   box-sizing: border-box;
-
-//   .status_bar {
-//     display: flex;
-//     flex-direction: row;
-//     justify-content: space-between;
-//     align-items: center;
-//     height: 37.5%;
-
-//      .left_item {
-//       text-align: left;
-//     }
-//      .center_item {
-//       text-align: center;
-//     }
-
-//       .right_item  {
-//     text-align: right;
-//     }
-//   }
+  & > .left_item {
+    order: 1;
+    text-align: left;
+    
+    a{
+      color: #fff;
+      opacity: 0.5  
+    }
+  }
   
-//   .status_bar > div {
-//     flex: 1;
-//     border: 1px solid red;
-//   }    
-// .status_bar > div > * {
-//   padding: 3px;
-// }
+  & > .right_item {
+    order: 3;
+    text-align: right;
+    font-size: 20px; 
+    
+    a {
+      color: #fff;
+    }  
+  }
+  }  
+}
 
-//   .title_bar {
-//     display: flex;
-//     flex-direction: row;
-//     justify-content: space-between;
-//     align-items: center;
-//     height: 62.5%;
-
-//     h1 {
-//       order: 2;
-//       text-align: center; 
-//       span {
-//         color: #f8ea65;
-//       } 
-//     }
-//     .title_bar > .left_item {
-//       order: 1;
-//       text-align: left;      
-//     }
-//     .title_bar > .right_item {
-//       order: 3;
-//       text-align: right;
-//       font-size: 20px;
-//     }
-
-//   }
-
-// }
-
-// .title_bar > .right_item {
-//   order: 3;
-//   text-align: right;
-//   font-size: 20px;
-// }
-
-// .title_bar > * {
-//   flex: 1;
-//   font-size: 16px;
-//   border: 1px solid red;
-// }
-
-// .title_bar > .left_item > a {
-//   color: #fff;
-//   opacity: 0.5;
-// }
-
-// .title_bar > .right_item > a {
-//   color: #fff;
-// }
 
 
 

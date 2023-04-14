@@ -1,34 +1,39 @@
-.tab_bar>ul>li:nth-child(3)>a{color: #513736;}
+
+body{
+  background: url(../images/backgroundPage.png)no-repeat 0 0;
+  background-size: cover;
+}
 
 .find_main{height: 85.8%;
             padding-top: 64px;
+
 
   .find_method{
     display: flex;
     flex-direction: row;
     align-items: center;
     height: 80px;
-    background: #eee; 
+     
     
-    & > li {
+    li {
       overflow: hidden;
       flex: 1;
-
-      a {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        color: #513736;
-        transition: transform 300ms linear 0s;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      color: #513736;
+      transition: transform 300ms linear 0s;
+      font-weight: bold;
         
         &:hover{
           transform: scale(1.05);  
         }
         i {
           font-size: 22px;
-          margin: 5px 0;  
+          margin: 5px 0;
+           
         }
-      }
+      
     }
   }
   .recommend_section{
@@ -48,10 +53,14 @@
             border-bottom:  1px solid #ebebeb;
             text-align: center;
             color: #8e9399;
-            font-size: 14px;  
+            font-size: 14px;
+            font-style: italic;  
           }
     }
   } 
+}
+.active i {
+  color: black !important;
 }
 
 

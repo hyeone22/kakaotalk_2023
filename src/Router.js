@@ -15,7 +15,7 @@ import Chatting from 'routes/Chatting'
 function AppRouter({isLoggedIn, userObj}) {
   return (
     <BrowserRouter basename={process.env.PUBLIC_URL}>
-    {isLoggedIn && <Navigation userObj={userObj} />}
+    
     <Routes>
       {isLoggedIn ? (
         <>
@@ -23,7 +23,7 @@ function AppRouter({isLoggedIn, userObj}) {
         <Route path='/profiles' element={<Profiles userObj={userObj} />} />
         <Route path='/chats' element={<Chats/>}/>
         <Route path='/find' element={<Find/>}/>
-        <Route path='/more' element={<More  userObj={userObj}/>}/>
+        <Route path='/more' element={<More  userObj={userObj} />} />
         <Route path='/profile' element={<Profile/>}/>
         <Route path='/chatting' element={<Chatting userObj={userObj}/>}/>
 
