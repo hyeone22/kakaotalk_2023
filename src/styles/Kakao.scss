@@ -1,0 +1,111 @@
+@import url(Common.scss);
+
+.chatting_set{
+    margin-bottom: 30px;
+  .kakao_form{
+    position: relative;
+    top: 30px;
+    right: 50px;
+    width: 100%;
+    max-width: 320px;
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    margin-bottom: 50px;
+    padding: 40px 20px ;
+    border-radius: 30px 30px 0 30px;
+    color: rgba(0, 0, 0, 0.8);
+    box-shadow: 12px 12px 2px 1px rgba(0, 0, 255, .2);
+    .kakao_form_text{
+      width: 83%;
+      padding: 10px 20px;
+      border-radius: 20px;
+      border: 1px solid #ccc;
+      text-align: center;
+      background-color: #fff;
+      color: #000; 
+      font-weight: bold;
+      
+    }
+    .kakao_form_submit{
+    width: 100%;
+    padding: 7px 20px;
+    text-align: center;
+    background-color: #a1c0d5;
+    color: #fff;
+    border-radius: 20px;
+    margin-top: 10px;
+    border: none;
+    &:hover{
+      background-color: #04aaff;
+    }
+    }
+    
+  }
+  .chatting_cancel{
+    position: absolute;
+    right: 29px;top: 63%;
+    width: 100%;
+    padding: 7px 20px;
+    text-align: center;
+    background-color: red;
+    border-radius: 20px;
+    color: #fff;
+    font-weight: bold;
+    border: none;
+    
+    
+
+  }
+  .chat_my{
+    background: #ffe73a; 
+    font-size: 15px;
+    line-height: 1;
+    padding: 10px 5px;
+    border-radius: 10px 10px 0 10px;
+    margin-right: 10px;
+  }
+  .chat_img{
+    background: #ffe73a;
+    margin-right: 10px;
+    border-radius: 10px 10px 0 10px;
+    padding: 10px 20px;
+  }
+  .chatting_close{
+    background-color: white;
+    width: 50px;height: 30px;
+    border-radius: 10px 0 0 10px;
+    border: none;
+    font-size: 13px;
+    text-align: center;
+    &:hover{
+      background-color: red;
+      
+    }
+    &:hover>i{
+      color: white;
+    }
+    i{
+      padding: none;
+      color: red;
+
+    }
+  }
+  .chatting_edit{
+    background-color: #04aaff;;
+    width: 50px;height: 30px;
+    border-radius: 0 10px 10px 0;
+    border: none;
+    &:hover{
+      background-color: white;
+    }
+    &:hover>i{
+      color: #04aaff;
+    }
+    i{
+      color: white;
+      padding: none;
+    }
+
+  }
+}

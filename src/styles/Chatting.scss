@@ -1,0 +1,177 @@
+
+
+
+.chatting_main {
+  display: flex;flex-direction: column;
+  height: calc(100vh - 109px);
+  padding-top: 60px;
+  
+  background: #a1c0d5;
+  
+  .date_info{
+    opacity: 0.5;
+    text-align: center;
+    margin: 10px; 
+  }
+  .chat_box{
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: fit-content;
+    max-width: calc(100%-80px);
+    position: relative;
+  }
+  .my{
+    align-self: flex-end;
+    align-items: flex-end;
+    max-width: 240px;
+    margin-right: 10px;
+
+    .chat_time{
+      position: absolute;
+      left: -40px;
+      bottom: -10px;
+      width: 50px;
+      opacity: 0.5;  
+    }   
+    
+  }
+  .chat{
+    font-size: 15px;
+    line-height: 1;
+    margin-left: 11px;
+    padding: 10px 5px;
+    border-radius: 10px 10px 10px 0;
+    background: #fff;  
+  }   
+    .other {
+    margin-left: 55px;
+    margin-top: 20px;
+    .profile_img {
+      position: absolute;
+      left: -55px;
+      top: -5px;
+      width: 40px;
+      height: 40px;
+      img{
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+      } 
+    }
+    .profile_name {
+      display: block;
+      font-weight: bold;
+      margin: 15px;
+      font-size: 13px;  
+    }
+    .chat_time {
+      position: absolute;
+      right: -55px;
+      bottom: -10px;
+      width: 50px;
+      opacity: 0.5;  
+    }
+   
+  }    
+}
+
+.chatting_footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  left: 0;bottom: 0;
+  width: 100%;
+  height: 55px;
+  background: #eee;
+
+  .chatting_form {
+    width: calc(100% - 40px);
+    display: flex;
+    justify-content: flex-end;
+    .text_box{
+      position: relative;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      width: 100%;
+      .text_field{
+        width: 100%;
+        height: 32px;
+        border: none; 
+        border-radius: 10px 0 0 10px; 
+      }
+      .emoticon_btn{
+        position: absolute;
+        right: 45px;
+
+        &>i{
+          color: #b3b4b4;
+          width: 34px;
+          height: 37px;
+          font-size: 20px;
+          margin-right: 40px;
+        }  
+      }  
+      .voice_btn{
+        &>i{
+          display: block;
+          width: 34px;
+          height: 35px;
+          line-height: 37px;
+          text-align: center;
+          background: #ffe73a;
+          color: #513736;
+          font-size: 16px;    
+        }  
+      }
+      .chatting_submit{
+        background-color: white;
+        border: none;
+        width: 45px;
+        height: 35px;
+        padding: none;
+        border-radius: 0 10px 10px 0;
+        &:hover{
+          background-color: #04aaff;
+        }
+        &:hover>i{
+          color: white;
+  
+        }
+        &>i{
+          font-size: 20px;
+          padding: none;
+          text-align: center;
+          line-height: 38px;
+        }
+      }
+      .chatting_send_file{
+        border: none;
+        cursor: pointer;
+        font-size: 20px;
+  
+      }
+      .chatting_attach{
+      position: absolute;
+      top: -100px;left: 20px;
+      background-color: #a1c0d5; 
+      border-radius: 20px;
+      
+      &>img{
+        width: 80px;
+        height: 80px;
+        border-radius: 40px; 
+        background-color: #fff; 
+      }
+      .chatting_button{
+        border: none;
+        border-radius: 20px;
+        
+      }
+      }  
+    }
+  }    
+}

@@ -1,0 +1,38 @@
+@import url(Common.scss);
+  .auth{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: url(../images/bg_newsletter.jpg)no-repeat 50% 30%;
+    width: 100%;
+    margin: 0 auto;
+      section{
+      // background: url(../images/09cd3751f9e59f3bc82b982059e7b1c8.jpg)no-repeat 0 0;
+      // display: block;
+      // width: 100%;
+      }
+    form {
+      display: block;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+        input {
+            margin: 10px 0; 
+        }
+    }
+    span{
+      font-size: 14px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+    div {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+  
+    }
+}

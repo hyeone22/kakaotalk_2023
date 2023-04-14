@@ -3,7 +3,11 @@ a:link, a:visited{color: #000;text-decoration: none;}
 a:hover, a:focus, a:active{color: #000;text-decoration: none;}
 img{max-width: 100%;}
 
-
+.empty{display: block;width: 40px;height: 40px;
+  margin: 10px 15px;border-radius: 50%;
+  border: 1px solid red;
+  background: url(../images/empty.jpg) 0 0 no-repeat;
+  background-size: cover;}
 
 html,body{width: 100%;height: 100%;}
 html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,

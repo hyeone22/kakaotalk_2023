@@ -1,0 +1,59 @@
+.tab_bar>ul>li:nth-child(3)>a{color: #513736;}
+
+.find_main{height: 85.8%;
+            padding-top: 64px;
+
+  .find_method{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 80px;
+    background: #eee; 
+    
+    & > li {
+      overflow: hidden;
+      flex: 1;
+
+      a {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        color: #513736;
+        transition: transform 300ms linear 0s;
+        
+        &:hover{
+          transform: scale(1.05);  
+        }
+        i {
+          font-size: 22px;
+          margin: 5px 0;  
+        }
+      }
+    }
+  }
+  .recommend_section{
+
+    & > header {
+      height: 22px;
+      line-height: 22px;
+      text-indent: 15px;
+      color: #8e9399;  
+    }
+
+    & > ul {
+          li {
+            height: 54px;
+            line-height: 54px;
+            border-top: 1px solid #ebebeb;
+            border-bottom:  1px solid #ebebeb;
+            text-align: center;
+            color: #8e9399;
+            font-size: 14px;  
+          }
+    }
+  } 
+}
+
+
+
+

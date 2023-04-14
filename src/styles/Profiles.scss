@@ -1,0 +1,14 @@
+@import url(Common.scss);
+
+.profile_main{
+  height: 65vh;
+
+  & > .background {
+    height: 65vh;
+      img{
+      height: 65vh;
+      width: 100%;
+      }
+    
+} 
+}

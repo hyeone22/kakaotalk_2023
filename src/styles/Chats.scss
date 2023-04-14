@@ -1,0 +1,125 @@
+@import url(../styles/Tab.scss);
+
+.chats_main{
+  height: 85.8%;
+  padding-top: 30px;
+  
+
+  .search_box{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 7.3%;min-height: 53px;
+  
+  .search_inner{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 88%;
+    height: 50%;
+    background-color: #f1f2f4;
+    border-radius: 5px; 
+    
+    & > i{
+      font-size: 16px;
+      color: #bdbcc1;
+      align-self: center;
+      margin-left: 15px; 
+    }
+    & > input{
+      flex: 1;
+      background: transparent;
+      border: none;
+      padding: 0 15px;  
+    }
+    & > input::placeholder{
+      text-align: center;
+    }
+  }  
+  }
+
+  .main_section {
+    
+    ul {
+      display: flex;
+      flex-direction: column;
+      border-top: 1px solid #ebebeb;  
+    
+      li {
+        border-bottom: 1px solid #ebebeb;  
+      
+        a {
+          display: flex;
+          flex-wrap: wrap;
+          align-items: center;
+          font-size: 16px;             
+        
+          .chats_img{
+            width: 50px;
+            height: 50px;
+            margin: 15px;
+              img{
+                display: block;
+                width: 50px;
+                height: 50px;
+                border-radius: 50%;
+                
+              }
+          }
+          .chats_cont{
+            flex: auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+          }
+          .chats_cont .chats_name {
+            font-weight: bold;
+            margin-bottom: 5px;  
+          } 
+          .chats_cont .chats_latest {
+            font-size: 12px;
+            color: #8e9399;  
+          }
+          .chats_time {
+            margin-right: 15px;
+            font-size: 12px;
+            color: #8e9399;  
+          }     
+        }
+      }
+    }
+  }
+  .chat_fa_btn {
+    position: fixed;
+    right: 20px;
+    bottom: 80px;  
+  
+    a {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 60px;
+      height: 60px;
+      background-color: #ffe84c;
+      border-radius: 50%;
+      box-shadow: 0 2px 6px #0004;
+      font-size: 18px;
+      color: #513736;
+      transition:  color 300ms linear 0s, background 300ms linear 0s; 
+
+    }
+    & > a:hover {
+      background: #513736;
+      color: #ffe84c  
+    }
+  }
+
+}
+
+
+
+
+
+
+

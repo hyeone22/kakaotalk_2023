@@ -1,0 +1,76 @@
+@import url(Common.scss);
+
+main {
+  height: 65vh;
+
+  & > .background {
+      height: 65vh;
+        img{
+        height: 65vh;
+        width: 100%;
+        }
+      
+  }  
+  & > .profile {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    width: 100%; 
+    
+    .profile_img {
+      position: absolute;
+      left: 50%;
+      top: -65px;
+      width: 100px;
+      height: 100px;
+      margin-left: -50px;
+        img{
+          border-radius: 50%;
+          display: block;width: 100px;height: 100px;
+        } 
+      
+    } 
+    .profile_cont {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 45px;
+      
+        .profile_name {
+          font-size: 16px;   
+        }
+        input {
+          width: 148px;
+          height: 24px;
+          margin:  15px 0 20px;
+          padding: 0 5px;
+          text-align: center;
+          border: none;  
+        }
+        .profile_menu {
+          display: flex;
+            li {
+              margin: 0 6px;
+                a {
+                  display: flex;
+                  flex-direction: column;
+                  align-items: center;
+                  font-weight: bold;
+                    span {
+                      display: block;
+                      width: 52px;
+                      height: 52px;
+                      border-radius: 50%;
+                      line-height: 52px;
+                      text-align: center;
+                      margin-bottom: 15px;
+                      background-color: #f2f2f2;color: #513736;
+                      font-size: 20px;  
+                    }  
+                }  
+            }  
+        }
+    } 
+  }
+
+}
