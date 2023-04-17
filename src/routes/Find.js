@@ -1,5 +1,5 @@
 import React from 'react'
-import { FaPlane,FaWifi,FaMoon,FaBluetoothB,FaBatteryFull,FaAddressBook,FaQrcode,FaMobileAlt,FaEnvelope  } from "react-icons/fa";
+import { FaAddressBook,FaQrcode,FaMobileAlt,FaEnvelope  } from "react-icons/fa";
 import Header from '../components/Header';
 import Tab from '../components/Tab';
 import '../styles/Find.scss';

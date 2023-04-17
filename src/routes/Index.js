@@ -35,7 +35,7 @@ function Index({userObj}) {
   return (
     <div> 
     <Header 
-      h1="Friends" span="1" a="Manege" i = {<FaDiaspora/>} /> 
+      h1="Friends" span="10" a="Manege" i = {<FaDiaspora/>} /> 
     <main className='index_main'>
     <form className='search_box'>
         <fieldset className='search_inner'>
@@ -85,7 +85,7 @@ function Index({userObj}) {
       {data.map((item,index) => (
           <SwiperSlide>
          <li className='update_friend'
-            key={item.id}
+            key={item.id} item={item}
             email={item.email}
             image={packs[index].images}
            > 
@@ -104,7 +104,7 @@ function Index({userObj}) {
       <header><h2>Friends</h2></header>
       <ul>
         {data.map((item,index) => (
-          <li key={item.id}
+          <li key={item.id} item={item}
             email={item.email}
             image={packs[index].images}
               >

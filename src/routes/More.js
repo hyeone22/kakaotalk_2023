@@ -3,7 +3,7 @@ import { FaSmile,FaPaintBrush,FaHandPeace,FaUserCircle,FaInfoCircle,FaUtensils,F
 import Header from '../components/Header';
 import Tab from '../components/Tab';
 import '../styles/More.scss';
-import { Link } from 'react-router-dom';
+
 
 function More({userObj}) {
   return (
@@ -13,12 +13,12 @@ function More({userObj}) {
     <main className='more_main'>
       <section className='user_info'>
         <h2 className='blind'>사용자 정보</h2>
-        <span className='profile_img empty'></span>
+        <span className='profile_img empty'><img src={userObj.photoURL} alt=''/></span>
         <span className='profile_info'>
           <span className='profile_name'>{userObj.displayName}</span>
           <span className='profile_email'>Userid@gmail.com</span>
         </span>
-        <span className='chat_img'><a href='#'><i><FaComment/></i></a></span>
+        <span className='chat_img'><i><FaComment/></i></span>
       </section>
       <section className='user_menu'>
         <h2 className='blind'>사용자 메뉴</h2>

@@ -12,21 +12,20 @@ function Profile() {
   return (
     <div>
     <Header
-      a=<i><FaTimes/></i> i=<FaUserAlt/> />    
-    <main>
-      <section className='background'><img src={image}/>
+      a={<i><FaTimes/></i>} i={<FaUserAlt/>} />    
+    <main className='profile_main'>
+      <section className='background'><img src={image} alt=''/>
         <h2 className='blind'>My profile background image</h2>
       </section>
-        <section className='profile'>
+        <section className='profile_sub'>
           <h2 className='blind'>My profile info</h2>
-          <div className='profile_img empty'><img src={image}/></div>
+          <div className='profile_img empty'><img src={image} alt=''/></div>
           <div className='profile_cont'>
             <span className='profile_name'>{user.username}</span>
             <input type='mail' className='profile_email' placeholder={user.email}/>
             <ul className='profile_menu'>
-            <li>
-              <a href='#'><span className='icon'><i><FaRegComment/></i></span>My Chatroom</a></li>
-            <li><a href='#'><span className='icon'><i><FaPencilAlt/></i></span>Edit Profile</a></li>
+            <li><span className='icon'><i><FaRegComment/></i></span>My Chatroom</li>
+            <li><span className='icon'><i><FaPencilAlt/></i></span>Edit Profile</li>
             </ul>
           </div>
         </section>

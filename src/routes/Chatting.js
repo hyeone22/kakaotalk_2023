@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import { FaBars,FaArrowLeft,FaSmile,FaPhone,FaRegArrowAltCircleLeft,FaPlusCircle,FaPhoneAlt } from "react-icons/fa";
-import Header from '../components/Header';
 import '../styles/Chatting.scss';
 import { addDoc, collection, onSnapshot, orderBy, query } from 'firebase/firestore';
 import { db, storage } from 'fbase';
@@ -85,7 +84,7 @@ function Chatting({userObj}) {
     <div>
 
       <div className='chatting_profile'>
-      <span className='profile_img empty'><img src={image} alt/></span>
+      <span className='profile_img empty'><img src={image} alt=''/></span>
       <span className='green_light'></span>
       <span className='chat_profile_name'>{name}</span>
        <div className='icon_set'>
@@ -105,7 +104,7 @@ function Chatting({userObj}) {
   <div className='chat_box other'>
     <div className='other_info'>
 
-      <span className='profile_img empty'><img src={image} alt/></span>
+      <span className='profile_img empty'><img src={image} alt=''/></span>
       <span className='profile_name'>{name}</span>
     </div>
       <span className='chat'>{id}</span>

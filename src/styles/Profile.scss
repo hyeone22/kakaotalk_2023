@@ -1,22 +1,26 @@
 // @import url(Header.scss);
 
 
- main {
-  height: 65vh;
+ .profile_main {
+  height: 100vh;
 
   & > .background {
-      height: 65vh;
+      height: 100vh;
         img{
-        height: 65vh;
+        height: 100vh;
         width: 100%;
+        filter: grayscale(50%);
+        opacity: 0.8;
         }
       
   }  
-  & > .profile {
+  & > .profile_sub {
     display: flex;
     justify-content: center;
     position: relative;
-    width: 100%; 
+    width: 100%;
+    position: absolute;
+    top: 70%; 
     
     .profile_img {
       position: absolute;
@@ -46,17 +50,18 @@
           margin:  15px 0 20px;
           padding: 0 5px;
           text-align: center;
-          border: none;  
+          border: none;
+          opacity: 0.9;
+          border-radius: 5px;  
         }
         .profile_menu {
           display: flex;
             li {
-              margin: 0 6px;
-                a {
-                  display: flex;
-                  flex-direction: column;
-                  align-items: center;
-                  font-weight: bold;
+              margin: 0 6px; 
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              font-weight: bold;
                     span {
                       display: block;
                       width: 52px;
@@ -68,7 +73,7 @@
                       background-color: #f2f2f2;color: #513736;
                       font-size: 20px;  
                     }  
-                }  
+                  
             }  
         }
     } 
