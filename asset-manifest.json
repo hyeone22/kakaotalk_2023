@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/kakaotalk_2023/static/css/main.3fab646a.css",
-    "main.js": "/kakaotalk_2023/static/js/main.5e9190b4.js",
+    "main.css": "/kakaotalk_2023/static/css/main.4357f8ec.css",
+    "main.js": "/kakaotalk_2023/static/js/main.33f9bf80.js",
     "static/media/kakaofriends.png": "/kakaotalk_2023/static/media/kakaofriends.84375bb9f89d79ccd760.png",
     "static/media/backgroundPage.png": "/kakaotalk_2023/static/media/backgroundPage.099de4cd207519f6da47.png",
     "static/media/path.png": "/kakaotalk_2023/static/media/path.7d00edf73f07bdcecc6d.png",
     "static/media/kakaostory.png": "/kakaotalk_2023/static/media/kakaostory.572f3ce5bf10fbdaac9d.png",
     "index.html": "/kakaotalk_2023/index.html",
-    "main.3fab646a.css.map": "/kakaotalk_2023/static/css/main.3fab646a.css.map",
-    "main.5e9190b4.js.map": "/kakaotalk_2023/static/js/main.5e9190b4.js.map"
+    "main.4357f8ec.css.map": "/kakaotalk_2023/static/css/main.4357f8ec.css.map",
+    "main.33f9bf80.js.map": "/kakaotalk_2023/static/js/main.33f9bf80.js.map"
   },
   "entrypoints": [
-    "static/css/main.3fab646a.css",
-    "static/js/main.5e9190b4.js"
+    "static/css/main.4357f8ec.css",
+    "static/js/main.33f9bf80.js"
   ]
 }
