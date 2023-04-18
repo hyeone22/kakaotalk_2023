@@ -6,7 +6,7 @@ import { db, storage } from 'fbase';
 import Kakao from 'components/Kakao';
 import { ref, uploadString, getDownloadURL  } from "firebase/storage";
 import { v4 as uuidv4 } from 'uuid';
-import {  useLocation } from 'react-router-dom';
+import {  Link, useLocation } from 'react-router-dom';
 
 
 function Chatting({userObj}) {
@@ -14,12 +14,12 @@ function Chatting({userObj}) {
   const [kakaos, setKakaos] = useState([]);
   const [attachment, setAttachment] = useState("");
   const location = useLocation();
-  const {image, name, id} = location.state
+  const {image, name, id} = location.state;
   
 
   useEffect(() => {
    
-    const q = query(collection(db, "kakaos"),
+    const q = query(collection(db, `kakaos${name}`),
                     orderBy("createdAt","asc"));
     const unsubscribe = onSnapshot(q, (querySnapshot) => {
       const newArray = [];
@@ -47,7 +47,7 @@ function Chatting({userObj}) {
       }  
 
 
-      const docRef = await addDoc(collection(db, "kakaos"), {
+      const docRef = await addDoc(collection(db, `kakaos${name}`), {
         text: kakao,
         createdAt: Date.now(),
         createrId: userObj.uid,  // 문서를 누가 작성했는지 알아내야함 userObj > 로그인한 사용자 정보
@@ -82,19 +82,15 @@ function Chatting({userObj}) {
   return (
   
     <div>
-
       <div className='chatting_profile'>
       <span className='profile_img empty'><img src={image} alt=''/></span>
       <span className='green_light'></span>
       <span className='chat_profile_name'>{name}</span>
        <div className='icon_set'>
-        <i><FaArrowLeft/></i>
+       <Link to={'/chats'}><i><FaArrowLeft/></i></Link>
         <i><FaPhoneAlt/></i>
         <i><FaBars/></i>
-        </div>
- 
-
-      
+        </div>     
       </div>
 
     <main className='chatting_main'>

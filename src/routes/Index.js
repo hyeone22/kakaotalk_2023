@@ -49,7 +49,9 @@ function Index({userObj}) {
       <ul>
       <li>
         <Link to='/profiles'>
-          <span className='profile_img empty'><img src={userObj.photoURL} alt=''/></span>
+          {userObj.photoURL && (
+            <span className='profile_img empty'><img src={userObj.photoURL} alt=''/></span>
+          )}
           <span className='profile_name'>{userObj.displayName}</span>
           <span className='profile_messages'>안녕</span>
         </Link>

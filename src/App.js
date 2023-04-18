@@ -7,8 +7,8 @@ import { onAuthStateChanged } from 'firebase/auth';
 
 
 function App() {
-  const [isLoggedIn, setIsLoggedIn] = useState(authService.currentUser);
-
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [init, setInit] = useState(false);
   const [userObj, setUserObj] = useState(null);
 
   useEffect(() => {
@@ -19,13 +19,16 @@ function App() {
       } else {
         setIsLoggedIn(false);
       }
+      setInit(true);
     });
   },[]);
 
   return (
     <>
-    <AppRouter isLoggedIn={isLoggedIn} userObj={userObj} />
-    
+    {init ? (  <AppRouter isLoggedIn={isLoggedIn} userObj={userObj} />
+    ) : (
+      "Loading..."
+    )}
     </>
   );
 }

@@ -1,13 +1,13 @@
-
 import { authService, db, storage } from 'fbase';
 import React, { useEffect, useState } from 'react'
-import { useNavigate } from 'react-router-dom'
-import { FaUserAlt,FaComment,FaTrashAlt  } from "react-icons/fa";
+import { Link, useNavigate } from 'react-router-dom'
+import { FaCamera,FaTrashAlt,FaFileImage,FaEyeSlash,FaSignOutAlt,FaTimes  } from "react-icons/fa";
 import { updateProfile } from 'firebase/auth';
-import { addDoc, collection,deleteDoc,doc,getDocs,onSnapshot, orderBy, query, where } from 'firebase/firestore';
+import { addDoc, collection,deleteDoc,getDocs,onSnapshot, orderBy, query, where } from 'firebase/firestore';
 import "styles/Profiles.scss";
 import { v4 as uuidv4 } from 'uuid';
 import { deleteObject, getDownloadURL,ref,uploadString } from 'firebase/storage';
+import Header from 'components/Header';
 
 
 
@@ -20,15 +20,18 @@ function Profiles({userObj}) {
   const [attach, setAttech] = useState("");
   const [newBg, setNewBg] = useState("");
   const [showForm, setShowForm] = useState(false);
+  const [showBack, setShowBack] = useState(false);
+
+
 
   const toggleForm = () => {
     setShowForm(!showForm);
   };
 
-  console.log(userObj);
+  const backToggle = () => {
+    setShowBack(!showBack);
+  }
   
-
-
   const onLogOutClick = () => {
     authService.signOut();
     navigate('/');
@@ -87,6 +90,7 @@ function Profiles({userObj}) {
 
   const onImgSubmit = async (e) => {
     e.preventDefault();
+
     if (attachment !== "") {
       const attachmentRef = ref(storage, `${userObj.uid}/profileImage`);
       const response = await uploadString(attachmentRef, attachment, "data_url");
@@ -130,7 +134,6 @@ function Profiles({userObj}) {
       } catch (e) {
         console.error("Error adding document: ", e);
       }
-      setSend("");
       setAttech("");
   } 
 
@@ -167,31 +170,48 @@ function Profiles({userObj}) {
 
   return (
     <>
-       
+      <Header h1={'My Profiles'} 
+      a={<Link to={'/'} style={{ color: 'white', textDecoration: 'none' }}>
+      <i>
+        <FaTimes style={{ color: 'white' }} />
+      </i>
+    </Link>}
+        
+      />
       <main className='profile_main'>
       <section className='profiles_background'>
-        <img src={newBg} alt='' />
+        {newBg && (
+          <img src={newBg} alt='' />
+        )}
+        
         <h2 className='blind'>My profile background image</h2>
         
       </section>
         <section className='profile_sub'>
           
           <div className='profile_cont'>
-          <span className='profile_delete' onClick={onDeleteClick}><i>
-            <FaTrashAlt/>
-          </i></span> 
-          <button className='back_delete' onClick={onDeletesClick}>배경삭제</button>
-          <form className='back_form' onSubmit={onBackSubmit}>
-          <label htmlFor="atach-file" className='input__label'>
-          <span>Add Background </span>  
-          </label>
-          <input type='submit' value='확인' onChange={onChange} className='back_input' />
-          </form>
+
+          <div className='toggle_btn'>
+          <button onClick={onDeletesClick} className='back_delete'><i><FaEyeSlash/></i></button>
+          <button onClick={backToggle} className='toggle_back'><i><FaFileImage/></i></button>
+          <button onClick={onLogOutClick} className='profile_logout'><i><FaSignOutAlt/></i></button>
+          </div>  
+
+          <span className='profile_delete' onClick={onDeleteClick}><i><FaTrashAlt/></i></span>         
+          
+          {showBack && (
+            <form className='back_form' onSubmit={onBackSubmit}>
+            <label htmlFor="atach-file" className='input__label'>
+            <span>Add Background </span>  
+            </label>
+            <input type='submit' value='확인' onChange={onChange} className='back_input' />
+            </form>
+          )}
 
           <span className='profiles_name'>{newDisplayName}</span>
           <input type='mail' className='profile_email' placeholder='Username@gmail.com'/>
 
-          <form onSubmit={onSubmit}>
+          <form onSubmit={onSubmit} className='text_form'>
           <h2 className='blind'>My profile info</h2>
             <input type='text' onChange={onChange} value={newDisplayName}
             placeholder='Profile Name'/>
@@ -199,29 +219,25 @@ function Profiles({userObj}) {
             </form>
 
           <input type='file' accept='image/*' onChange={onBackChange}
-          id='atach-file' style={{opacity:0}} />  
-
+          id='atach-file' style={{display:'none'}} />  
 
             <div className='profile_img empty' >
-              <img src={userObj.photoURL} alt=''/> 
+              {userObj.photoURL && (
+                <img src={userObj.photoURL} alt=''/> 
+              )}
+
             </div>
-
-            <div>
-      <button onClick={toggleForm}>Add Profiles!!</button>
-      {showForm && (
-        <form className='profiles_form' onSubmit={onImgSubmit} >
-          <label htmlFor="attach-file" className='InsertInput__label'>
-            <span>Add Profiles!!</span>
-          </label>
-          <input type='submit' value='update' className='profiles_input' />
-          <input type='file' accept='image/*' onChange={onFileChange} id='attach-file' style={{opacity:0}}/>
-        </form>
-      )}
-    </div>
-
-   
-
-            <button onClick={onLogOutClick}>Log Out</button>
+          
+            <button onClick={toggleForm} className='toggle_profile'><i><FaCamera/></i></button>
+              {showForm && (
+              <form className='profiles_form' onSubmit={onImgSubmit} >
+                <label htmlFor="attach-file" className='InsertInput__label'>
+                <span>Add Profiles Img</span>
+                </label>
+                <input type='submit' value='update' className='profiles_input' />                
+              </form>
+               )}
+               <input type='file' accept='image/*' onChange={onFileChange} id='attach-file' style={{display:'none'}}/>             
           </div>
         </section>
     </main>  

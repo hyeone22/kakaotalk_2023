@@ -3,8 +3,10 @@
 .chats_main{
   height: 85.8%;
   padding-top: 30px;
+  padding-bottom: 50px;
   background: url(../images/backgroundPage.png)no-repeat 0 0;
   background-size: cover;
+  
 
   .search_box{
     display: flex;
@@ -107,7 +109,7 @@
     align-items: center;
     width: 60px;
     height: 60px;
-    background-color: #ffe84c;
+    background-color: #eaeaea;
     border-radius: 50%;
     box-shadow: 0 2px 6px #0004;
     font-size: 18px;
@@ -115,7 +117,7 @@
     transition:  color 300ms linear 0s, background 300ms linear 0s; 
 
     &:hover {
-      background: #513736;
+      background: #8e9399;
       color: #ffe84c  
     }
   }

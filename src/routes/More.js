@@ -3,9 +3,14 @@ import { FaSmile,FaPaintBrush,FaHandPeace,FaUserCircle,FaInfoCircle,FaUtensils,F
 import Header from '../components/Header';
 import Tab from '../components/Tab';
 import '../styles/More.scss';
+import { authService } from 'fbase';
+import { Navigate } from 'react-router-dom';
 
 
 function More({userObj}) {
+
+ 
+
   return (
     <div>
     <Header 
@@ -51,6 +56,7 @@ function More({userObj}) {
           <li><span className='app_icon'></span>KaKao Story</li>
           <li><span className='app_icon'></span>Path</li>
           <li><span className='app_icon'></span>KaKao Friends</li>
+         
         </ul>
       </section>
     </main>

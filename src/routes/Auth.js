@@ -70,6 +70,8 @@ function Auth() {
         value={password} onChange={onChange} />
         <input type='submit' value={newAccount ? "Create Account" : "Log In"}
           className='auth_input_account' />
+
+        {error && <span className="authError">{error}</span>}
       </form>
       <span onClick={toggleAccount}>
         {newAccount ? "Sign In" : "Create Account"}

@@ -1,6 +1,7 @@
 import React from 'react'
-import { FaPlane,FaWifi,FaMoon,FaBluetoothB,FaBatteryFull } from "react-icons/fa";
+import { FaPlane,FaWifi,FaMoon,FaBluetoothB,FaBatteryFull,FaBluetooth } from "react-icons/fa";
 import '../styles/Header.scss';
+
 
 function Header(props) {
   return (
@@ -17,7 +18,7 @@ function Header(props) {
         <div className='right_item'>
           <i><FaMoon/></i>
           <i><FaBluetoothB/></i>
-          <span><span>100</span>%</span>
+          <i><FaBluetooth/></i>
           <i><FaBatteryFull/></i>
         </div>
       </div>

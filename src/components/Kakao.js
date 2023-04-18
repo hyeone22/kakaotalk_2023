@@ -4,16 +4,21 @@ import { deleteObject, ref } from 'firebase/storage';
 import React, { useState } from 'react'
 import "styles/Kakao.scss";
 import { FaTrashAlt,FaRegEdit } from "react-icons/fa";
+import { useLocation } from 'react-router-dom';
 
 function Kakao(props) {
   const{kakaoObj:{text,id,attachmentUrl},isOwner} = props;
   const[editing, setEditing] = useState(false);
   const [newTweet, setNewTweet] = useState(text);
+  const location = useLocation();
+  const { name } = location.state;
+  console.log(name)
+
 
   const onDeleteClick = async () => {
     const ok = window.confirm("삭제하시겠습니까?");
     if(ok){
-      const data = await deleteDoc(doc(db, "kakaos", `/${id}`));
+      const data = await deleteDoc(doc(db, `kakaos${name}/${id}`));
       if(attachmentUrl !== ""){
         const desertRef = ref(storage, attachmentUrl);
         await deleteObject(desertRef);
@@ -30,8 +35,8 @@ function Kakao(props) {
 
   const onSubmit = async (e) => {
     e.preventDefault();
-    const newTweetRef = doc(db, "kakaos", `/${id}`);
-
+    const newTweetRef = doc(db, `kakaos${name}/${id}`);
+    
     await updateDoc(newTweetRef, {
       text: newTweet,
       createdAt: Date.now(),
@@ -46,8 +51,9 @@ function Kakao(props) {
         <form onSubmit={onSubmit} className='kakao_form'>
           <input type='text'  onChange={onChange} value={newTweet} required className='kakao_form_text' />
           <input type='submit' value='Update Message' className='kakao_form_submit' />
+          <button onClick={toggleEditing} className='chatting_cancel'>Cancel</button>
         </form>
-        <button onClick={toggleEditing} className='chatting_cancel'>Cancel</button>
+        
       </>
      ) : (
       <>

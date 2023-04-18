@@ -56,8 +56,10 @@
               color: #513736;
               font-weight: bold;
               transition: transform 300ms linear 0s;
+              
               &:hover {
-                transform: scale(1.05);  
+                transform: scale(1.05);
+                
               }
                 i {
                   font-size: 30px;
@@ -125,6 +127,7 @@
               &:nth-child(3) .app_icon {
                 background-image: url(../images/kakaofriends.png);
               }
+
 
             .app_icon {
               display: block;

@@ -7,6 +7,7 @@
   background: #513736;
   color: #fff;padding: 0 15px;
   box-sizing: border-box;
+  z-index: 10;
 
   .status_bar{
     display: flex;
@@ -21,6 +22,7 @@
 
    * {
     padding: 3px;
+    font-size: 14px;
   }    
 
   }

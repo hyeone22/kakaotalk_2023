@@ -29,6 +29,17 @@
       top: 18px;
       right: 39%;
       z-index: 1;
+      transition: transform 300ms linear 0s;
+      
+      cursor: pointer;
+        &:hover{
+          background-color: #000;
+          transform: scale(1.2);  
+        }
+        &:hover>i{
+          color: #fff;
+          transition: color 1000ms ease-in-out 0s;
+        }
       i {
         font-size: 14px;
         color: #000;
@@ -85,7 +96,7 @@
       width: 148px;
       height: 24px;
       text-align: center;
-      background-color: #fff;
+      background-color: transparent;
       padding: 0 5px;
       
     }
@@ -122,6 +133,54 @@
         }  
       }      
     }
+    .text_form{
+      input:first-of-type{
+        width: 120px;
+        
+      }
+      input:last-of-type{
+        cursor: pointer;
+        opacity: 0.9;
+        &:hover{
+          background-color: antiquewhite;
+        }
+      }
+    }
+    .toggle_profile{
+      border: none;
+      background-color: transparent;
+      font-size: 20px;
+      position: absolute;
+      top: -20px;
+      left: 160px;
+      color: #fff;
+      transition: transform 300ms linear 0s;
+      transition: color 1000ms ease-in-out 0s;
+      cursor: pointer;
+      &:hover{
+        transform: scale(1.2);
+        color: #000; 
+      }
+    }
+    .toggle_btn{
+      position: absolute;
+      top: -120px;
+      right: 30px;
+      button{
+        border: none;
+        background-color: transparent;
+        font-size: 17px;
+        color: #fff;
+        transition: color 1000ms ease-in-out 0s; 
+        &:hover{
+          transform: scale(1.2);
+          color: #000; 
+        }
+      }
+
+      
+    }
+
   }  
 
 }

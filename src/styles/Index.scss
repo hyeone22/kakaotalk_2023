@@ -4,8 +4,10 @@
  .index_main{
   height: 85.8%;
   padding-top: 30px;
+  padding-bottom: 50px;
   background: url(../images/backgroundPage.png)no-repeat 0 0;
   background-size: cover;
+  
   .search_box{
     display: flex;
     flex-direction: row;
@@ -132,6 +134,20 @@
     
   }
         
+  }
+  .update_friend{
+    a{
+      display: flex ;
+      flex-direction: column ;
+      justify-content: center ;
+        .profile_img.empty{
+          align-self: center;  
+        }
+        .update_profile_name{
+          text-align: center;
+        }  
+    }
+
   }
 }
 
