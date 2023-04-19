@@ -13,12 +13,10 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 
-
 function Index({userObj}) {
   
   console.log(packs);
   const [data, setData] = useState([]);
-
 
   useEffect(()=> {
     async function fetchData() {
@@ -49,9 +47,9 @@ function Index({userObj}) {
       <ul>
       <li>
         <Link to='/profiles'>
-          {userObj.photoURL && (
-            <span className='profile_img empty'><img src={userObj.photoURL} alt=''/></span>
-          )}
+        <div className='profile_img empty' style={userObj.photoURL ? {backgroundImage: `url(${userObj.photoURL})`} : {backgroundImage:''}}>
+       
+       </div>
           <span className='profile_name'>{userObj.displayName}</span>
           <span className='profile_messages'>안녕</span>
         </Link>
@@ -65,8 +63,8 @@ function Index({userObj}) {
        loop={true}
        breakpoints={{
         1378:{
-          slidesPerView: 6, // 한번에 보이는 슬라이드 개수
-          slidesPerGroup: 6, // 몇개씩 슬라이드 할지 
+          slidesPerView: 6, 
+          slidesPerGroup: 6, 
         },
         998:{
           slidesPerView: 5,
@@ -82,8 +80,7 @@ function Index({userObj}) {
         }
       }} 
       >
-      <ul className='update_ul'>
-     
+      <ul className='update_ul'>  
       {data.map((item,index) => (
           <SwiperSlide>
          <li className='update_friend'
@@ -98,7 +95,6 @@ function Index({userObj}) {
        </li> 
        </SwiperSlide>
       ))}
-      
       </ul>
       </Swiper>
     </section>

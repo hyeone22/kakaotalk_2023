@@ -4,7 +4,6 @@ import { Link, useLocation } from 'react-router-dom';
 import Header from '../components/Header';
 import "../styles/Profile.scss";
 
-
 function Profile() {
  const location = useLocation();
  const {user, image} = location.state
@@ -21,7 +20,6 @@ function Profile() {
     }
     i={<FaUserAlt style={{ color: 'white' }} />}
   />
-
     <main className='profile_main'>
       <section className='background'><img src={image} alt=''/>
         <h2 className='blind'>My profile background image</h2>
@@ -42,5 +40,4 @@ function Profile() {
     </div>
   )
 }
-
 export default Profile

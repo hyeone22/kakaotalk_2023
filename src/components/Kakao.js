@@ -52,8 +52,7 @@ function Kakao(props) {
           <input type='text'  onChange={onChange} value={newTweet} required className='kakao_form_text' />
           <input type='submit' value='Update Message' className='kakao_form_submit' />
           <button onClick={toggleEditing} className='chatting_cancel'>Cancel</button>
-        </form>
-        
+        </form> 
       </>
      ) : (
       <>

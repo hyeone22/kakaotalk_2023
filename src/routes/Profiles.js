@@ -9,11 +9,7 @@ import { v4 as uuidv4 } from 'uuid';
 import { deleteObject, getDownloadURL,ref,uploadString } from 'firebase/storage';
 import Header from 'components/Header';
 
-
-
 function Profiles({userObj}) {
-  const [send, setSend] = useState('');
-  const [tweets, setTweets] = useState([]);
   const [newDisplayName, setNewDisplayName] = useState(userObj.displayName);
   const navigate = useNavigate();
   const [attachment, setAttachment] = useState("");
@@ -21,9 +17,7 @@ function Profiles({userObj}) {
   const [newBg, setNewBg] = useState("");
   const [showForm, setShowForm] = useState(false);
   const [showBack, setShowBack] = useState(false);
-
-
-
+ 
   const toggleForm = () => {
     setShowForm(!showForm);
   };
@@ -49,7 +43,6 @@ function Profiles({userObj}) {
       if (newArray.length > 0 && newArray[0].attachmentUrl) {
         setNewBg(newArray[0].attachmentUrl);
       }
-       
     });
   },[]);
 
@@ -70,7 +63,6 @@ function Profiles({userObj}) {
   
   }
 
-
   const onFileChange = (e) => {
     const {target:{files}} = e;
 
@@ -87,10 +79,9 @@ function Profiles({userObj}) {
     
   }
 
-
   const onImgSubmit = async (e) => {
     e.preventDefault();
-
+    
     if (attachment !== "") {
       const attachmentRef = ref(storage, `${userObj.uid}/profileImage`);
       const response = await uploadString(attachmentRef, attachment, "data_url");
@@ -98,22 +89,23 @@ function Profiles({userObj}) {
       await updateProfile(userObj, {
         photoURL: newPhotoUrl,
       });
-      setAttachment("");
-      
+      console.log(newPhotoUrl);
     }
   };
-
+  console.log('userObj-00000000',userObj);
   const onDeleteClick = async () => {
     const ok = window.confirm("사라져 제발");
     if (ok) {
-      if (userObj.photoURL) {
         const desertRef = ref(storage, `${userObj.uid}/profileImage`);
         await deleteObject(desertRef);
-        await updateProfile(userObj, { photoURL: null });
-        setAttachment("");
-      }
+        await updateProfile(userObj, { photoURL: "" });
+        console.log('Profile update successful');
+  
+        setAttachment(null);
+        console.log(userObj);     
     }
   };
+  
   const onBackSubmit = async(e) => {
     e.preventDefault();
     try {
@@ -170,35 +162,28 @@ function Profiles({userObj}) {
 
   return (
     <>
-      <Header h1={'My Profiles'} 
-      a={<Link to={'/'} style={{ color: 'white', textDecoration: 'none' }}>
-      <i>
+        <Header h1={'My Profiles'} 
+        a={<Link to={'/'} style={{ color: 'white', textDecoration: 'none' }}>
+        <i>
         <FaTimes style={{ color: 'white' }} />
-      </i>
-    </Link>}
-        
-      />
+        </i>
+          </Link>} />
       <main className='profile_main'>
-      <section className='profiles_background'>
-        {newBg && (
-          <img src={newBg} alt='' />
-        )}
-        
-        <h2 className='blind'>My profile background image</h2>
-        
-      </section>
+        <section className='profiles_background'>
+          {newBg && (
+            <img src={newBg} alt='' />
+          )}
+          <h2 className='blind'>My profile background image</h2>
+        </section>
         <section className='profile_sub'>
-          
           <div className='profile_cont'>
+            <div className='toggle_btn'>
+              <button onClick={onDeletesClick} className='back_delete'><i><FaEyeSlash/></i></button>
+              <button onClick={backToggle} className='toggle_back'><i><FaFileImage/></i></button>
+              <button onClick={onLogOutClick} className='profile_logout'><i><FaSignOutAlt/></i></button>
+            </div> 
+          <span className='profile_delete' onClick={onDeleteClick}><i><FaTrashAlt/></i></span> 
 
-          <div className='toggle_btn'>
-          <button onClick={onDeletesClick} className='back_delete'><i><FaEyeSlash/></i></button>
-          <button onClick={backToggle} className='toggle_back'><i><FaFileImage/></i></button>
-          <button onClick={onLogOutClick} className='profile_logout'><i><FaSignOutAlt/></i></button>
-          </div>  
-
-          <span className='profile_delete' onClick={onDeleteClick}><i><FaTrashAlt/></i></span>         
-          
           {showBack && (
             <form className='back_form' onSubmit={onBackSubmit}>
             <label htmlFor="atach-file" className='input__label'>
@@ -212,35 +197,33 @@ function Profiles({userObj}) {
           <input type='mail' className='profile_email' placeholder='Username@gmail.com'/>
 
           <form onSubmit={onSubmit} className='text_form'>
-          <h2 className='blind'>My profile info</h2>
+            <h2 className='blind'>My profile info</h2>
             <input type='text' onChange={onChange} value={newDisplayName}
             placeholder='Profile Name'/>
             <input type='submit' value='상태메시지' onChange={onChange} />
-            </form>
+          </form>
 
           <input type='file' accept='image/*' onChange={onBackChange}
           id='atach-file' style={{display:'none'}} />  
 
-            <div className='profile_img empty' >
-              {userObj.photoURL && (
-                <img src={userObj.photoURL} alt=''/> 
-              )}
-
-            </div>
-          
-            <button onClick={toggleForm} className='toggle_profile'><i><FaCamera/></i></button>
-              {showForm && (
-              <form className='profiles_form' onSubmit={onImgSubmit} >
-                <label htmlFor="attach-file" className='InsertInput__label'>
-                <span>Add Profiles Img</span>
-                </label>
-                <input type='submit' value='update' className='profiles_input' />                
-              </form>
-               )}
-               <input type='file' accept='image/*' onChange={onFileChange} id='attach-file' style={{display:'none'}}/>             
+          <div className='profile_img empty' style=
+          {userObj.photoURL ? {backgroundImage: `url(${userObj.photoURL})`} : {backgroundImage:''}}>
           </div>
+                    
+        <button onClick={toggleForm} className='toggle_profile'><i><FaCamera/></i></button>
+        
+        {showForm && (
+        <form className='profiles_form' onSubmit={onImgSubmit} >
+          <label htmlFor="attach-file" className='InsertInput__label'>
+          <span>Add Profiles Img</span>
+          </label>
+          <input type='submit' value='update' className='profiles_input' />                
+        </form>
+          )}
+          <input type='file' accept='image/*' onChange={onFileChange} id='attach-file' style={{display:'none'}}/>             
+    </div>
         </section>
-    </main>  
+     </main>  
 
     </>
   )

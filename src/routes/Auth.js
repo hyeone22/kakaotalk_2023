@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import {authService} from 'fbase';
 import {createUserWithEmailAndPassword, signInWithEmailAndPassword, GoogleAuthProvider, GithubAuthProvider,
   signInWithPopup  } from "firebase/auth"; //신규회원가입을위해필요한함수
-import { async } from '@firebase/util';
 import '../styles/Auth.scss'
 
 
@@ -49,7 +48,7 @@ function Auth() {
     const {target:{name}} = (e);
     let provider;
     if(name === "google"){
-       provider = new GoogleAuthProvider(); // 변수 이름이 겹치니까 let provider 로 만듬
+       provider = new GoogleAuthProvider(); 
     }else if(name === "github"){
        provider = new GithubAuthProvider();
     }
@@ -70,7 +69,6 @@ function Auth() {
         value={password} onChange={onChange} />
         <input type='submit' value={newAccount ? "Create Account" : "Log In"}
           className='auth_input_account' />
-
         {error && <span className="authError">{error}</span>}
       </form>
       <span onClick={toggleAccount}>

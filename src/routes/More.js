@@ -56,7 +56,6 @@ function More({userObj}) {
           <li><span className='app_icon'></span>KaKao Story</li>
           <li><span className='app_icon'></span>Path</li>
           <li><span className='app_icon'></span>KaKao Friends</li>
-         
         </ul>
       </section>
     </main>

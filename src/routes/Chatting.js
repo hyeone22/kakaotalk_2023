@@ -8,7 +8,6 @@ import { ref, uploadString, getDownloadURL  } from "firebase/storage";
 import { v4 as uuidv4 } from 'uuid';
 import {  Link, useLocation } from 'react-router-dom';
 
-
 function Chatting({userObj}) {
   const [kakao, setKakao] = useState('');
   const [kakaos, setKakaos] = useState([]);
@@ -16,7 +15,6 @@ function Chatting({userObj}) {
   const location = useLocation();
   const {image, name, id} = location.state;
   
-
   useEffect(() => {
    
     const q = query(collection(db, `kakaos${name}`),
@@ -45,7 +43,6 @@ function Chatting({userObj}) {
         console.log('response->',response)
         attachmentUrl = await getDownloadURL(ref(storage, response.ref))  
       }  
-
 
       const docRef = await addDoc(collection(db, `kakaos${name}`), {
         text: kakao,
@@ -80,7 +77,7 @@ function Chatting({userObj}) {
     }
 
   return (
-  
+ 
     <div>
       <div className='chatting_profile'>
       <span className='profile_img empty'><img src={image} alt=''/></span>
@@ -130,8 +127,7 @@ function Chatting({userObj}) {
       <button type='submit' value='전송' onChange={onChange} className='chatting_submit' >
       <i><FaRegArrowAltCircleLeft /></i>
       </button>
-      
-       
+            
       {attachment && (
         <div className='chatting_attach'>
         <img src={attachment} width="70" height="60" alt="" />

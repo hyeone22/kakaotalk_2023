@@ -57,7 +57,7 @@
 
 .chatting_main {
   display: flex;flex-direction: column;
-  height: calc(100vh - 109px);
+  height: auto;
   padding-top: 60px;
   background: url(../images/backgroundPage.png)no-repeat 0 0;
   background-size: cover;
@@ -188,6 +188,7 @@
         height: 35px;
         padding: none;
         border-radius: 0 10px 10px 0;
+        cursor: pointer;
         &:hover{
           background-color: #04aaff;
         }

@@ -2,7 +2,6 @@ import React from 'react'
 import { FaPlane,FaWifi,FaMoon,FaBluetoothB,FaBatteryFull,FaBluetooth } from "react-icons/fa";
 import '../styles/Header.scss';
 
-
 function Header(props) {
   return (
     <div>
