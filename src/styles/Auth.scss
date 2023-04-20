@@ -10,8 +10,7 @@
     width: 100%;
     margin: 0 auto;
     background-size: cover;
-      .auth_background{
-        
+      .auth_background{ 
         object-fit: cover;
         width: 360px;
         height: 360px;
@@ -29,8 +28,9 @@
           font-weight: bold;
           text-shadow: 2px 6px 2px gray;
           color: #fff;
-          position: absolute;
-          left: 30%;top: 30%;
+          margin-left: 80px;
+          margin-top: 50px;
+          
          
         }
       }
