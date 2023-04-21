@@ -44,7 +44,7 @@ function Profiles({userObj}) {
         setNewBg(newArray[0].attachmentUrl);
       }
     });
-  },[]);
+  },[userObj]);
 
 
   const onSubmit = async(e) => {
@@ -91,8 +91,11 @@ function Profiles({userObj}) {
       });
       console.log(newPhotoUrl);
     }
+    setAttachment("");
   };
   console.log('userObj-00000000',userObj);
+
+
   const onDeleteClick = async () => {
     const ok = window.confirm("사라져 제발");
     if (ok) {
@@ -100,7 +103,6 @@ function Profiles({userObj}) {
         await deleteObject(desertRef);
         await updateProfile(userObj, { photoURL: "" });
         console.log('Profile update successful');
-  
         setAttachment(null);
         console.log(userObj);     
     }
@@ -156,7 +158,7 @@ function Profiles({userObj}) {
           await deleteObject(storageReff);
         }
       });
-      setAttech("");
+      setNewBg("");
     }
   };
 

@@ -8,7 +8,7 @@ function Find() {
   return (
     <div>
     <Header 
-     h1="Find" a="Edit" />  
+     h1="Find" a="Search" />  
     <main className='find_main'>
       <ul className='find_method'>
         <li><i><FaAddressBook/></i>Find</li>
