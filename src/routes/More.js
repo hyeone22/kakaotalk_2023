@@ -1,13 +1,20 @@
 import React from 'react'
-import { FaSmile,FaPaintBrush,FaHandPeace,FaUserCircle,FaInfoCircle,FaUtensils,FaStore,FaTv,FaPencilAlt,FaGraduationCap,FaBuilding,FaWonSign,FaVideo,FaComment,FaDiaspora  } from "react-icons/fa";
+import { FaSmile,FaPaintBrush,FaHandPeace,FaUserCircle,FaInfoCircle,FaUtensils,FaStore,FaTv,FaPencilAlt,FaGraduationCap,FaBuilding,FaWonSign,FaVideo,FaComment,FaDiaspora,FaSignOutAlt  } from "react-icons/fa";
 import Header from '../components/Header';
 import Tab from '../components/Tab';
 import '../styles/More.scss';
 import { authService } from 'fbase';
-import { Navigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+
 
 
 function More({userObj}) {
+  const navigate = useNavigate();
+
+  const onLogOutClick = () => {
+    authService.signOut();
+    navigate('/');
+  }
 
  
 
@@ -21,9 +28,9 @@ function More({userObj}) {
         <span className='profile_img empty'><img src={userObj.photoURL} alt=''/></span>
         <span className='profile_info'>
           <span className='profile_name'>{userObj.displayName}</span>
-          <span className='profile_email'>Userid@gmail.com</span>
+          
         </span>
-        <span className='chat_img'><i><FaComment/></i></span>
+        <span onClick={onLogOutClick} className='chat_img'><i><FaSignOutAlt/></i></span>
       </section>
       <section className='user_menu'>
         <h2 className='blind'>사용자 메뉴</h2>

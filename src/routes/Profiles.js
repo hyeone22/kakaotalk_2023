@@ -1,7 +1,7 @@
 import { authService, db, storage } from 'fbase';
 import React, { useEffect, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
-import { FaCamera,FaTrashAlt,FaFileImage,FaEyeSlash,FaSignOutAlt,FaTimes  } from "react-icons/fa";
+import { FaCamera,FaTrashAlt,FaFileImage,FaEyeSlash,FaSignOutAlt,FaTimes,FaPlus  } from "react-icons/fa";
 import { updateProfile } from 'firebase/auth';
 import { addDoc, collection,deleteDoc,getDocs,onSnapshot, orderBy, query, where } from 'firebase/firestore';
 import "styles/Profiles.scss";
@@ -189,9 +189,9 @@ function Profiles({userObj}) {
           {showBack && (
             <form className='back_form' onSubmit={onBackSubmit}>
             <label htmlFor="atach-file" className='input__label'>
-            <span>Add Background </span>  
+            <span><i><FaPlus/></i></span>  
             </label>
-            <input type='submit' value='확인' onChange={onChange} className='back_input' />
+            <input type='submit' value='Update' onChange={onChange} className='back_input' />
             </form>
           )}
 
@@ -217,9 +217,9 @@ function Profiles({userObj}) {
         {showForm && (
         <form className='profiles_form' onSubmit={onImgSubmit} >
           <label htmlFor="attach-file" className='InsertInput__label'>
-          <span>Add Profiles Img</span>
+          <span><i><FaPlus /></i></span>
           </label>
-          <input type='submit' value='update' className='profiles_input' />                
+          <input type='submit' value='Update' className='profiles_input' />                
         </form>
           )}
           <input type='file' accept='image/*' onChange={onFileChange} id='attach-file' style={{display:'none'}}/>             
