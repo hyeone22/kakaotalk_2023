@@ -11,7 +11,7 @@ import Header from 'components/Header';
 
 function Profiles({userObj}) {
   const [newDisplayName, setNewDisplayName] = useState(userObj.displayName);
-  const navigate = useNavigate();
+
   const [attachment, setAttachment] = useState("");
   const [attach, setAttech] = useState("");
   const [newBg, setNewBg] = useState("");
@@ -26,10 +26,7 @@ function Profiles({userObj}) {
     setShowBack(!showBack);
   }
   
-  const onLogOutClick = () => {
-    authService.signOut();
-    navigate('/');
-  }
+
 
   useEffect(() => {
     const q = query(collection(db, "send"),
@@ -182,7 +179,6 @@ function Profiles({userObj}) {
             <div className='toggle_btn'>
               <button onClick={onDeletesClick} className='back_delete'><i><FaEyeSlash/></i></button>
               <button onClick={backToggle} className='toggle_back'><i><FaFileImage/></i></button>
-              <button onClick={onLogOutClick} className='profile_logout'><i><FaSignOutAlt/></i></button>
             </div> 
           <span className='profile_delete' onClick={onDeleteClick}><i><FaTrashAlt/></i></span> 
 
